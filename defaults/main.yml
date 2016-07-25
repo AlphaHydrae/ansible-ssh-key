@@ -1,0 +1,13 @@
+---
+
+# SSH key
+ssh_key_user: "{{ user }}"
+ssh_key_bits: 8192
+ssh_key_comment: "{{ ssh_key_user }}@{{ hostname | default(ansible_hostname) }}"
+ssh_key_dir: "{{ host_user_homes }}/{{ ssh_key_user }}/.ssh"
+ssh_key_file: "{{ ssh_key_dir }}/id_rsa"
+
+# Root symlink
+ssh_key_root_link: false
+ssh_key_root_dir: "{{ host_root_home }}/.ssh"
+ssh_key_root_file: "{{ ssh_key_root_dir }}/id_rsa"
