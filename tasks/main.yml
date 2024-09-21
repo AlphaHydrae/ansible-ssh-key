@@ -5,7 +5,7 @@
   set_fact: ssh_key_file={{ ssh_key_root_file }}
   when: ssh_key_user == host_root_user
 - name: Generate SSH key
-  user: name={{ ssh_key_user }} generate_ssh_key=yes ssh_key_file={{ ssh_key_file }} ssh_key_bits={{ ssh_key_bits }} ssh_key_comment={{ ssh_key_comment }}
+  user: name={{ ssh_key_user }} generate_ssh_key=yes ssh_key_file={{ ssh_key_file }} ssh_key_type={{ ssh_key_type }} ssh_key_bits={{ ssh_key_bits }} ssh_key_comment={{ ssh_key_comment }}
 
 # Create root's symlink (if enabled)
 - name: Ensure root .ssh directory
